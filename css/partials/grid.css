@@ -3,8 +3,8 @@
 /* 12-COLUMN GRID SYSTEM USING CSS GRID */
 .row {
     --gridgap: var(--spacer-small);
-    /* padding-top: var(--spacer-large);
-    padding-bottom: var(--spacer-large); */
+    padding-top: var(--spacer-large);
+    padding-bottom: var(--spacer-large);
 }
 
 .row>* {

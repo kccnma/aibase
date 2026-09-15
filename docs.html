@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Base | Docs</title>
+    <meta name="description"
+        content="Documentation for AI Base, a minimal HTML + CSS + JS base-level starter for bespoke static websites.">
+
+    <!-- MAIN CSS FILE -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="site-logo">
+            <h1><a href="index.html">AI Base</a></h1>
+        </div>
+        <nav class="site-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="docs.html" aria-current="page">Docs</a></li>
+                <li><a href="styleguide.html">Style Guide</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Documentation</h1>
+                <p>See below for more information on how to use AI Base.</p>
+            </div>
+        </section>
+
+
+        <div class="page-layout-twocolumns">
+
+            <aside class="sidebar">
+                <nav>
+                    <h2>Contents:</h2>
+                    <ul>
+                        <li><a href="#gettingstarted">Getting Started</a></li>
+                        <li><a href="#folderstructure">Folder Structure</a></li>
+                        <li><a href="#csspartials">CSS Partials</a></li>
+                        <li><a href="#globalcolors">Global Colors</a></li>
+                        <li><a href="#typography">Typography</a></li>
+                        <li><a href="#buttons">Buttons</a></li>
+                        <li><a href="#responsivemedia">Responsive Media</a></li>
+                        <li><a href="#container">Container</a></li>
+                        <li><a href="#mediaqueries">Media Queries</a></li>
+                        <li><a href="#grid">Grid System</a></li>
+                        <li><a href="#helpers">Helpers</a></li>
+                        <li><a href="#animations">Animations</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <section>
+                <div class="container">
+                    <h2 id="gettingstarted">Getting Started</h2>
+                    <p>Simple Base is a minimalistic HTML + CSS + JS base front-end starter for simple, bespoke
+                        static websites. It was created for students learning how to hand-code a basic front-end
+                        framework line by line.</p>
+                    <p>No prior web design experience is required. There is no pre-processing, no command line, and
+                        no special software. All you need is a text editor and a browser.</p>
+                </div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <h2 id="folderstructure">Folder Structure</h2>
+                    <p>Your site folder is organized so page files live at the root, CSS partials live in
+                        <code>css/</code>, JavaScript lives in <code>js/</code>, and images and videos live in
+                        <code>media/</code>.
+                    </p>
+                    <pre><code>
+sitename/
+├── index.html
+├── css/
+│   ├── style.css
+│   └── partials/
+│       ├── global-variables.css
+│       ├── global-resets.css
+│       ├── global-colors.css
+│       ├── global-typography.css
+│       ├── global-media.css
+│       ├── global-helpers.css
+│       ├── containers.css
+│       ├── grid.css
+│       ├── structure.css
+│       ├── ui-buttons.css
+│       └── animations.css
+├── js/
+│   └── script.js
+└── media/
+    └── ...
+                    </code></pre>
+                </div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <h2 id="csspartials">CSS Partials</h2>
+                    <p>Similar to SASS, this setup uses native CSS <code>@import</code> rules to combine modular
+                        partial files into a single <code>css/style.css</code> file:</p>
+                    <pre><code>
+/* TABLE OF CONTENTS / CSS PARTIALS */
+
+/* ---------- SITE GLOBALS ---------- */
+@import url('partials/global-variables.css');
+@import url('partials/global-resets.css');
+@import url('partials/global-colors.css');
+@import url('partials/global-typography.css');
+@import url('partials/global-media.css');
+@import url('partials/global-helpers.css');
+
+/* ---------- PAGE LAYOUT ---------- */
+@import url('partials/containers.css');
+@import url('partials/grid.css');
+
+/* ---------- PAGE STRUCTURE ---------- */
+@import url('partials/structure.css');
+
+/* ---------- CONTENT COMPONENTS ---------- */
+@import url('partials/ui-buttons.css');
+
+/* ---------- ANIMATIONS ---------- */
+@import url('partials/animations.css');
+                    </code></pre>
+                    <p><code>style.css</code> is the only stylesheet linked from your HTML. Partial order matters:
+                        variables load first so every downstream partial can reference them.</p>
+                </div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <h2 id="globalcolors">Global Colors</h2>
+                    <p>Simple Base comes with a starter set of global colors defined as CSS custom properties
+                        (variables). Edit them in <code>css/partials/global-variables.css</code> to re-skin the
+                        entire site.</p>
+                    <ul>
+                        <li>#eee Body Background</li>
+                        <li>#222 Body Text</li>
+                        <li>rgb(66, 118, 229) Links</li>
+                        <li>rgb(33, 82, 188) Link Hover</li>
+                    </ul>
+                    <pre><code>
+/* GLOBAL VARIABLES */
+
+:root {
+
+    /* MAIN UI COLORS */
+    --body-background-color: #eee;
+    --body-text-color: #222;
+
+    /* LINK COLORS */
+    --link-color: rgb(66, 118, 229);
+    --link-color-hover: rgb(33, 82, 188);
+
+    /* DEFINE FONTS */
+    --font-sans: system-ui, sans-serif;
+    --font-serif: Georgia, 'Times New Roman', Times, serif;
+
+    /* SET FONTS */
+    --font-body: var(--font-sans);
+    --font-headings: var(--font-sans);
+
+    /* SIZING UNITS */
+    --spacer-tiny: .5rem;
+    --spacer-small: 1rem;
+    --spacer-medium: 2rem;
+    --spacer-large: 3rem;
+    --spacer-jumbo: 4rem;
+
+    /* BORDERS */
+    --border-radius: 10px;
+
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <h2 id="typography">Typography</h2>
+                    <h1>h1 Headline</h1>
+                    <h2>h2 Headline</h2>
+                    <h3>h3 Headline</h3>
+                    <h4>h4 Headline</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error vero perferendis neque, nam
+                        incidunt
+                        eligendi
+                        quidem temporibus laudantium nisi laborum tenetur nulla corrupti molestias esse doloremque
+                        quaerat
+                        vitae
+                        possimus suscipit facere fuga optio quam! Quibusdam quidem, facere, sequi corporis optio
+                        pariatur
+                        tempore
+                        molestias quia animi veniam nemo repellendus, rerum commodi?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error vero perferendis neque, nam
+                        incidunt
+                        eligendi
+                        quidem temporibus laudantium nisi laborum tenetur nulla corrupti molestias esse doloremque
+                        quaerat
+                        vitae
+                        possimus suscipit facere fuga optio quam! Quibusdam quidem, facere, sequi corporis optio
+                        pariatur
+                        tempore
+                        molestias quia animi veniam nemo repellendus, rerum commodi?</p>
+                    <h2>h2 Headline</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error vero perferendis neque, nam
+                        incidunt
+                        eligendi
+                        quidem temporibus laudantium nisi laborum tenetur nulla corrupti molestias esse doloremque
+                        quaerat
+                        vitae
+                        possimus suscipit facere fuga optio quam! Quibusdam quidem, facere, sequi corporis optio
+                        pariatur
+                        tempore
+                        molestias quia animi veniam nemo repellendus, rerum commodi?</p>
+                </div>
+            </section>
+            <section>
+                <div class="container">
+                    <h2 id="buttons">Buttons</h2>
+
+                    <h3>Link Buttons</h3>
+                    <a href="#" class="button">Default Button</a>
+                    <a href="#" class="button alt">Alt Button</a>
+                    <pre><code>
+&lt;a href="#" class="button"&gt;Default Button&lt;/a&gt;
+&lt;a href="#" class="button alt"&gt;Alt Button&lt;/a&gt;
+                    </code></pre>
+
+                    <h3>Button Element</h3>
+                    <button class="button">Default Button Element</button>
+                    <pre><code>
+&lt;button class="button"&gt;Default Button Element&lt;/button&gt;
+                    </code></pre>
+
+                </div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <h2 id="responsivemedia">Responsive Media</h2>
+
+                    <h3>Standard Images (jpg, png, gif, webm, etc)</h3>
+                    <img src="media/placeholder-3200x1800.jpg" alt="Placeholder Image" width="3200" height="1800">
+
+
+                    <h3>SVGs</h3>
+                    <img src="media/placeholder-3200x1800.svg" alt="Placeholder SVG" width="3200" height="1800">
+                    <svg width="3200" height="1800" viewBox="0 0 3200 1800" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="3200" height="1800" fill="#8b8b8b" />
+                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="100"
+                            fill="#fff">&lt;svg&gt; Inline
+                            svg &lt;/svg&gt;</text>
+                    </svg>
+
+                    <h3>Videos (mp4, webm, etc)</h3>
+
+                    <h4>Regular Video with Controls</h4>
+                    <video width="1920" height="1080" controls>
+                        <source src="media/placeholder-1920x1080.mp4" type="video/mp4">
+                    </video>
+
+                    <h4>Looping Autoplay Video with No Controls</h4>
+                    <video width="1920" height="1080" muted autoplay loop playsinline>
+                        <source src="media/placeholder-1920x1080.mp4" type="video/mp4">
+                    </video>
+                    <pre><code>
+&lt;video muted autoplay loop playsinline&gt;
+            </code>
+            </pre>
+
+
+                </div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <h2 id="container">Container</h2>
+                    <p>A reusable <code>.container</code> div that stays fluid on small screens and is fixed at a
+                        configurable max width (<code>--container-width: 1100px</code>) once large enough. It centers
+                        horizontally with <code>margin-inline: auto</code>.</p>
+                    <pre><code>
+&lt;div class="container"&gt;
+    CONTENT
+&lt;/div&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <h2 id="mediaqueries">Media Queries</h2>
+                    <p>This base uses a mobile-first approach. Styles written outside of a media query target small
+                        screens by default, then larger screens are layered on top with
+                        <code>@media (min-width: 768px)</code>.
+                    </p>
+                    <pre><code>
+/* MOBILE FIRST: DEFAULT STYLES APPLY FIRST */
+
+/* MEDIUM / TABLET SCREENS AND UP */
+@media (min-width: 768px) {
+    /* LAYER ON THE GRID, LARGER TYPE, AND SITE LAYOUT HERE */
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="demo">
+
+                <h2 id="grid">Grid Systems</h2>
+
+                <h3>Semantic Grid</h3>
+
+                <div class="row">
+                    <div class="one-whole">
+                        <p>1</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="one-half">
+                        <p>½</p>
+                    </div>
+                    <div class="one-half">
+                        <p>½</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="one-third">
+                        <p>⅓</p>
+                    </div>
+                    <div class="one-third">
+                        <p>⅓</p>
+                    </div>
+                    <div class="one-third">
+                        <p>⅓</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="one-third">
+                        <p>⅓</p>
+                    </div>
+                    <div class="two-thirds">
+                        <p>⅔</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="one-fourth">
+                        <p>¼</p>
+                    </div>
+                    <div class="one-fourth">
+                        <p>¼</p>
+                    </div>
+                    <div class="one-fourth">
+                        <p>¼</p>
+                    </div>
+                    <div class="one-fourth">
+                        <p>¼</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="one-fourth">
+                        <p>¼</p>
+                    </div>
+                    <div class="three-fourths">
+                        <p>¾</p>
+                    </div>
+                </div>
+
+                <h3>12 Column Grid System</h3>
+
+                <div class="row">
+                    <div class="col-1">
+                        <p>.col-1</p>
+                    </div>
+                    <div class="col-11">
+                        <p>.col-11</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-2">
+                        <p>.col-2</p>
+                    </div>
+                    <div class="col-10">
+                        <p>.col-10</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-3">
+                        <p>.col-3</p>
+                    </div>
+                    <div class="col-9">
+                        <p>.col-9</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-4">
+                        <p>.col-4</p>
+                    </div>
+                    <div class="col-8">
+                        <p>.col-8</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-5">
+                        <p>.col-5</p>
+                    </div>
+                    <div class="col-7">
+                        <p>.col-7</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <p>.col-6</p>
+                    </div>
+                    <div class="col-6">
+                        <p>.col-6</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-7">
+                        <p>.col-7</p>
+                    </div>
+                    <div class="col-5">
+                        <p>.col-5</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-8">
+                        <p>.col-8</p>
+                    </div>
+                    <div class="col-4">
+                        <p>.col-4</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-9">
+                        <p>.col-9</p>
+                    </div>
+                    <div class="col-3">
+                        <p>.col-3</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-10">
+                        <p>.col-10</p>
+                    </div>
+                    <div class="col-2">
+                        <p>.col-2</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-11">
+                        <p>.col-11</p>
+                    </div>
+                    <div class="col-1">
+                        <p>.col-1</p>
+                    </div>
+                </div>
+
+                <h4>Centered Columns</h4>
+
+                <div class="row">
+                    <div class="one-third centered">
+                        <p>⅓ .centered</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="one-half centered">
+                        <p>½ .centered</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="two-thirds centered">
+                        <p>⅔ .centered</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-10 centered">
+                        <p>.col-10 .centered</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-8 centered">
+                        <p>.col-8 .centered</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 centered">
+                        <p>.col-6 .centered</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-4 centered">
+                        <p>.col-4 .centered</p>
+                    </div>
+                </div>
+
+
+                <h4>Push/Offset Columns</h4>
+
+                <div class="row">
+                    <div class="col-6 push-6">
+                        <p>.col-6 .push-6</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 offset-3">
+                        <p>.col-6 .offset-3</p>
+                    </div>
+                </div>
+
+            </section>
+
+            <section>
+                <div class="container">
+                    <h2 id="helpers">Helpers</h2>
+
+                    <h3>hide-visually</h3>
+                    <p>Hide an element visually while keeping it available to screen readers and search engines.</p>
+                    <pre><code>
+&lt;span class="hide-visually"&gt;Visually hidden text&lt;/span&gt;
+                    </code></pre>
+
+                    <h3>Space Above</h3>
+                    <p>Add vertical breathing room above an element using a CSS pseudo-element.</p>
+                    <pre><code>
+&lt;div class="space-above-large"&gt;CONTENT&lt;/div&gt;
+                    </code></pre>
+
+                    <h3>Text Centering</h3>
+                    <p class="text-centered">This paragraph is centered.</p>
+                    <pre><code>
+&lt;p class="text-centered"&gt;This paragraph is centered.&lt;/p&gt;
+                    </code></pre>
+
+                </div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <h2 id="animations">Animations</h2>
+                    <p>The main content area fades in on page load, and interactive elements (links and buttons)
+                        transition their colors smoothly on hover.</p>
+                    <pre><code>
+/* PAGE LOAD FADE-IN */
+@keyframes fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+main {
+    animation: fade-in .5s ease-in forwards;
+}
+
+/* BUTTON & LINK HOVER TRANSITIONS */
+a,
+.button {
+    transition: color .2s ease-out,
+                background-color .2s ease-out,
+                border-color .2s ease-out;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="three-fourths">
+                    <div class="footer-about">
+                        <h2><a href="index.html">AI Base</a></h2>
+                        <p>AI Base is a basic set of starter HTML, CSS, and Javascript created by a human, assisted by
+                            AI, and built for front-end developers and UX/UI designers that want to embrace AI to build
+                            custom static
+                            websites that are fast and accessible.</p>
+                    </div>
+                </div>
+                <div class="one-fourth">
+                    <nav class="footer-nav">
+                        <h4 class="hide-visually-but-keep-space">Pages</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="docs.html">Docs</a></li>
+                            <li><a href="styleguide.html">Style Guide</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MAIN JS FILE -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

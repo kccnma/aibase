@@ -38,3 +38,9 @@
 .space-above-large::before {
     padding-top: var(--spacer-large);
 }
+
+/* TEXT ALIGNMENT HELPERS */
+.text-centered {
+    text-align: center;
+    margin-inline: auto;
+}

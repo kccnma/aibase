@@ -63,3 +63,42 @@ p {
     /* WIDOW SLAYER */
     text-wrap: pretty;
 }
+
+/* INLINE CODE */
+code {
+    font-family: monospace;
+    font-size: .875em;
+    background-color: rgb(0 0 0 / .1);
+    padding: .1em .35em;
+    border-radius: var(--border-radius);
+}
+
+/* CODE BLOCKS */
+pre {
+    overflow-x: auto;
+}
+
+pre code {
+    display: block;
+    background-color: #222;
+    color: #eee;
+    padding: var(--spacer-small) var(--spacer-medium);
+    line-height: 1.5;
+    border-radius: var(--border-radius);
+    max-width: none;
+}
+
+/* HORIZONTAL RULES */
+hr {
+    border: none;
+    border-bottom: 1px solid rgb(0 0 0 / .2);
+    margin: var(--spacer-large) 0;
+}
+
+/* BLOCKQUOTES */
+blockquote {
+    margin: 0;
+    padding-left: var(--spacer-small);
+    border-left: 4px solid var(--link-color);
+    font-style: italic;
+}
