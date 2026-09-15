@@ -1,0 +1,33 @@
+/* UI BUTTONS */
+
+/* DEFAULT BUTTON */
+.button,
+.button:visited {
+    display: inline-block;
+    padding: var(--spacer-small) var(--spacer-medium);
+    background-color: var(--link-color);
+    border: 1px solid var(--link-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    margin-top: var(--spacer-small);
+}
+
+/* ALT (OUTLINE) BUTTON VARIANT */
+.button.alt {
+    background-color: transparent;
+    color: var(--link-color);
+}
+
+/* HOVER STATES */
+.button:hover,
+.button.alt:hover {
+    background-color: var(--link-color-hover);
+    border-color: var(--link-color-hover);
+    color: #fff;
+}
+
+/* SPACE BETWEEN MULTIPLE BUTTONS */
+.button + .button {
+    margin-left: var(--spacer-small);
+}

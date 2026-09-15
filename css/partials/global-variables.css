@@ -1,0 +1,33 @@
+/* GLOBAL VARIABLES */
+:root {
+
+    /* MAIN UI COLORS */
+    --body-background-color: #eee;
+    --body-text-color: #222;
+
+    /* LINK COLORS */
+    --link-color: rgb(66, 118, 229);
+    --link-color-hover: rgb(33, 82, 188);
+
+    /* DEFINE FONTS */
+    --font-sans: system-ui, sans-serif;
+    --font-serif: Georgia, 'Times New Roman', Times, serif;
+
+    /* SET FONTS */
+    --font-body: var(--font-sans);
+    --font-headings: var(--font-sans);
+
+    /* SIZING UNITS */
+    --spacer-tiny: .5rem;
+    --spacer-small: 1rem;
+    --spacer-medium: 2rem;
+    --spacer-large: 3rem;
+    --spacer-extralarge: 4rem;
+    --spacer-jumbo: 6rem;
+
+    /* CONTAINERS */
+    --container-width: 1100px;
+
+    /* BORDERS */
+    --border-radius: 10px;
+}

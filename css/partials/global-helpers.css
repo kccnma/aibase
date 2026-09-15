@@ -1,0 +1,40 @@
+/* GLOBAL HELPERS */
+
+/* HIDE ELEMENTS VISUALLY BUT NOT FROM SCREEN READERS OR SEARCH ENGINES */
+.hide-visually {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+@media (max-width: 767px) {
+    .hide-visually-on-mobile {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+}
+
+.hide-visually-but-keep-space {
+    visibility: hidden;
+}
+
+/* SPACING HELPERS */
+.space-above-small::before,
+.space-above-medium::before,
+.space-above-large::before {
+    content: "";
+    display: block;
+}
+
+.space-above-small::before {
+    padding-top: var(--spacer-small);
+}
+
+.space-above-medium::before {
+    padding-top: var(--spacer-medium);
+}
+
+.space-above-large::before {
+    padding-top: var(--spacer-large);
+}

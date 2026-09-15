@@ -1,0 +1,115 @@
+/* STRUCTURE */
+
+/* SITE HEADER */
+.site-header {
+    /* background-color: yellow; */
+    padding: var(--spacer-small);
+
+    /* DISPLAY CHILDREN SIDE-BY-SIDE */
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacer-small);
+    justify-content: space-between;
+    align-items: center;
+
+    /* SITE LOGO */
+    .site-logo {
+
+        h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 1.5em;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+    }
+
+    /* SITE NAVIGATION */
+    .site-nav {
+
+        ul {
+            display: flex;
+            gap: var(--spacer-small);
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+    }
+
+}
+
+/* SITE FOOTER */
+.site-footer {
+    background-color: #ddd;
+    padding-block: var(--spacer-large);
+
+    /* REMOVE BULLETS FROM FOOTER NAV */
+    .footer-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+}
+
+/* SECTIONS */
+
+section {
+    padding: var(--spacer-large) 0;
+}
+
+/* HERO SECTION */
+.hero {
+    background-color: #ddd;
+    padding-block: var(--spacer-jumbo);
+}
+
+/* TWO COLUMN LAYOUT WITH AN ASIDE */
+/* WRAPPER IS CENTERED AND GRIDDED ON DESKTOP, WHILE
+THE HERO SECTION STAYS FULL WIDTH OUTSIDE OF IT */
+.page-layout-twocolumns {
+    max-width: var(--container-width);
+    margin-inline: auto;
+    padding-inline: var(--spacer-small);
+
+    .container {
+        padding-inline: 0;
+    }
+}
+
+.page-layout-twocolumns aside.sidebar {
+    padding-block-start: var(--spacer-large);
+}
+
+@media (min-width: 768px) {
+    .page-layout-twocolumns {
+        display: grid;
+        grid-template-columns: 200px minmax(0, 1fr);
+        gap: var(--spacer-small);
+        align-items: start;
+    }
+
+    .page-layout-twocolumns aside.sidebar {
+        grid-column: 1 / 2;
+        grid-row: 1 / -1;
+
+        /* STICK THE ASIDE TO THE TOP ON SCROLL */
+        position: sticky;
+        top: 0;
+    }
+
+    .page-layout-twocolumns section {
+        grid-column: 2 / 3;
+    }
+}

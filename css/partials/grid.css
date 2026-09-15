@@ -1,0 +1,101 @@
+/* GRID SYSTEM */
+
+/* 12-COLUMN GRID SYSTEM USING CSS GRID */
+.row {
+    --gridgap: var(--spacer-small);
+    /* padding-top: var(--spacer-large);
+    padding-bottom: var(--spacer-large); */
+}
+
+.row>* {
+    margin-bottom: var(--gridgap);
+}
+
+@media (min-width: 768px) {
+    .row {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: var(--gridgap);
+    }
+
+    .row>* {
+        margin-bottom: 0;
+    }
+
+    /* SWAPPED/REVERSED COLUMNS (FOR ROWS WITH 2 CHILDREN ONLY) */
+    .row.swapped, 
+    .row.reversed {
+        &>*:first-child { order: 2; };
+        &>*:last-child { order: 1; }
+    }
+
+    /* ENABLE VERTICALLY CENTERED COLUMNS */
+    .row.vertical-centered { align-items: center; }
+
+    /* COMMONLY USED SEMANTIC COLUMN WIDTHS */
+    .one-whole { grid-column: auto / span 12;  }
+    .one-half { grid-column: auto / span 6; }
+    .one-third { grid-column: auto / span 4; }
+
+    .two-thirds { grid-column: auto / span 8; }
+    .one-fourth { grid-column: auto / span 3; }
+    .three-fourths { grid-column: auto / span 9; }
+
+    /* CENTERED SEMANTIC COLUMNS */
+    .one-half.centered { grid-column-start: 4; }
+    .one-third.centered { grid-column-start: 5; }
+    .two-thirds.centered { grid-column-start: 3; }
+
+    /* 12-COLUMN SPAN CLASSES */
+    .col-1 { grid-column: auto / span 1; }
+    .col-2 { grid-column: auto / span 2; }
+    .col-3 { grid-column: auto / span 3; }
+    .col-4 { grid-column: auto / span 4; }
+    .col-5 { grid-column: auto / span 5; }
+    .col-6 { grid-column: auto / span 6; }
+    .col-7 { grid-column: auto / span 7; }
+    .col-8 { grid-column: auto / span 8; }
+    .col-9 { grid-column: auto / span 9; }
+    .col-10 { grid-column: auto / span 10; }
+    .col-11 { grid-column: auto / span 11; }
+    .col-12 { grid-column: auto / span 12; }
+
+    /* CENTERED 12-COLUMN COLUMNS (for even width columns only */
+    .col-2.centered { grid-column-start: 6; }
+    .col-4.centered { grid-column-start: 5; }
+    .col-6.centered { grid-column-start: 4; }
+    .col-8.centered { grid-column-start: 3; }
+    .col-10.centered { grid-column-start: 2; }
+
+    /* PUSHES/OFFSETS */
+    .push-1, .offset-1 { grid-column-start: 2; }
+    .push-2, .offset-2 { grid-column-start: 3; }
+    .push-3, .offset-3 { grid-column-start: 4; }
+    .push-4, .offset-4 { grid-column-start: 5; }
+    .push-5, .offset-5 { grid-column-start: 6; }
+    .push-6, .offset-6 { grid-column-start: 7; }
+    .push-7, .offset-7 { grid-column-start: 8; }
+    .push-8, .offset-8 { grid-column-start: 9; }
+    .push-9, .offset-9 { grid-column-start: 10; }
+    .push-10, .offset-10 { grid-column-start: 11; }
+    .push-11, .offset-11 { grid-column-start: 12; }
+}
+
+/* FOR DEMO GRID ONLY */
+.demo .row {
+    font-size: .8em;
+    margin-bottom: 0;
+    padding: 0;
+
+    p {
+        margin: 0;
+        max-width: none;
+    }
+
+    &>* {
+        background: rgb(0 0 0 / .1);
+        padding: var(--spacer-tiny);
+        text-align: center;
+        margin-bottom: var(--gridgap);
+    }
+}

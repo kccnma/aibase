@@ -1,0 +1,22 @@
+/* GLOBAL COLORS */
+
+/* MAIN SITE UI COLORS */
+body {
+    /* SET MAIN SITE BACKGROUND COLOR */
+    background-color: var(--body-background-color);
+
+    /* SET MAIN SITE TEXT COLOR */
+    color: var(--body-text-color);
+}
+
+
+/* LINK COLORS */
+a {
+    /* SET TEXT LINK COLORS */
+    color: var(--link-color);
+
+    &:hover {
+        /* SET TEXT LINK HOVER COLORS */
+        color: var(--link-color-hover);
+    }
+}

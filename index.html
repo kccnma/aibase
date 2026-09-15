@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Base</title>
+
+    <!-- MAIN CSS FILE -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="site-logo">
+            <h1><a href="index.html">AI Base</a></h1>
+        </div>
+        <nav class="site-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="styleguide.html">Style Guide</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Hero Headline</h1>
+                <h2>Hero Subheadline</h2>
+                <p>Hero description text goes here.</p>
+                <a href="#" class="button">Button</a>
+            </div>
+        </section>
+
+
+        <div class="page-layout-twocolumns">
+
+            <aside class="sidebar">
+                <nav>
+                    <h2>Contents:</h2>
+                    <ul>
+                        <li><a href="#typography">Typography</a></li>
+                        <li><a href="#responsivemedia">Responsive Media</a></li>
+                        <li><a href="#grid">Grid System</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <section>
+                <div class="container">
+                    <h2 id="typography">Typography</h2>
+                    <h1>h1 Headline</h1>
+                    <h2>h2 Headline</h2>
+                    <h3>h3 Headline</h3>
+                    <h4>h4 Headline</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error vero perferendis neque, nam
+                        incidunt
+                        eligendi
+                        quidem temporibus laudantium nisi laborum tenetur nulla corrupti molestias esse doloremque
+                        quaerat
+                        vitae
+                        possimus suscipit facere fuga optio quam! Quibusdam quidem, facere, sequi corporis optio
+                        pariatur
+                        tempore
+                        molestias quia animi veniam nemo repellendus, rerum commodi?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error vero perferendis neque, nam
+                        incidunt
+                        eligendi
+                        quidem temporibus laudantium nisi laborum tenetur nulla corrupti molestias esse doloremque
+                        quaerat
+                        vitae
+                        possimus suscipit facere fuga optio quam! Quibusdam quidem, facere, sequi corporis optio
+                        pariatur
+                        tempore
+                        molestias quia animi veniam nemo repellendus, rerum commodi?</p>
+                    <h2>h2 Headline</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error vero perferendis neque, nam
+                        incidunt
+                        eligendi
+                        quidem temporibus laudantium nisi laborum tenetur nulla corrupti molestias esse doloremque
+                        quaerat
+                        vitae
+                        possimus suscipit facere fuga optio quam! Quibusdam quidem, facere, sequi corporis optio
+                        pariatur
+                        tempore
+                        molestias quia animi veniam nemo repellendus, rerum commodi?</p>
+                </div>
+            </section>
+            <section>
+                <div class="container">
+                    <h2 id="responsivemedia">Responsive Media</h2>
+
+                    <h3>Standard Images (jpg, png, gif, webm, etc)</h3>
+                    <img src="media/placeholder-3200x1800.jpg" alt="Placeholder Image" width="3200" height="1800">
+
+
+                    <h3>SVGs</h3>
+                    <img src="media/placeholder-3200x1800.svg" alt="Placeholder SVG" width="3200" height="1800">
+                    <svg width="3200" height="1800" viewBox="0 0 3200 1800" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="3200" height="1800" fill="#8b8b8b" />
+                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="100"
+                            fill="#fff">&lt;svg&gt; Inline
+                            svg &lt;/svg&gt;</text>
+                    </svg>
+
+                    <h3>Videos (mp4, webm, etc)</h3>
+
+                    <h4>Regular Video with Controls</h4>
+                    <video width="1920" height="1080" controls>
+                        <source src="media/placeholder-1920x1080.mp4" type="video/mp4">
+                    </video>
+
+                    <h4>Looping Autoplay Video with No Controls</h4>
+                    <video width="1920" height="1080" muted autoplay loop playsinline>
+                        <source src="media/placeholder-1920x1080.mp4" type="video/mp4">
+                    </video>
+                    <pre><code>
+&lt;video muted autoplay loop playsinline&gt;
+            </code>
+            </pre>
+
+
+                </div>
+            </section>
+
+            <section class="demo">
+
+                <h2 id="grid">Grid Systems</h2>
+
+                <h3>Semantic Grid</h3>
+
+                <div class="row">
+                    <div class="one-whole">
+                        <p>1</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="one-half">
+                        <p>½</p>
+                    </div>
+                    <div class="one-half">
+                        <p>½</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="one-third">
+                        <p>⅓</p>
+                    </div>
+                    <div class="one-third">
+                        <p>⅓</p>
+                    </div>
+                    <div class="one-third">
+                        <p>⅓</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="one-third">
+                        <p>⅓</p>
+                    </div>
+                    <div class="two-thirds">
+                        <p>⅔</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="one-fourth">
+                        <p>¼</p>
+                    </div>
+                    <div class="one-fourth">
+                        <p>¼</p>
+                    </div>
+                    <div class="one-fourth">
+                        <p>¼</p>
+                    </div>
+                    <div class="one-fourth">
+                        <p>¼</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="one-fourth">
+                        <p>¼</p>
+                    </div>
+                    <div class="three-fourths">
+                        <p>¾</p>
+                    </div>
+                </div>
+
+                <h3>12 Column Grid System</h3>
+
+                <div class="row">
+                    <div class="col-1">
+                        <p>.col-1</p>
+                    </div>
+                    <div class="col-11">
+                        <p>.col-11</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-2">
+                        <p>.col-2</p>
+                    </div>
+                    <div class="col-10">
+                        <p>.col-10</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-3">
+                        <p>.col-3</p>
+                    </div>
+                    <div class="col-9">
+                        <p>.col-9</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-4">
+                        <p>.col-4</p>
+                    </div>
+                    <div class="col-8">
+                        <p>.col-8</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-5">
+                        <p>.col-5</p>
+                    </div>
+                    <div class="col-7">
+                        <p>.col-7</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <p>.col-6</p>
+                    </div>
+                    <div class="col-6">
+                        <p>.col-6</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-7">
+                        <p>.col-7</p>
+                    </div>
+                    <div class="col-5">
+                        <p>.col-5</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-8">
+                        <p>.col-8</p>
+                    </div>
+                    <div class="col-4">
+                        <p>.col-4</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-9">
+                        <p>.col-9</p>
+                    </div>
+                    <div class="col-3">
+                        <p>.col-3</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-10">
+                        <p>.col-10</p>
+                    </div>
+                    <div class="col-2">
+                        <p>.col-2</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-11">
+                        <p>.col-11</p>
+                    </div>
+                    <div class="col-1">
+                        <p>.col-1</p>
+                    </div>
+                </div>
+
+                <h4>Centered Columns</h4>
+
+                <div class="row">
+                    <div class="one-third centered">
+                        <p>⅓ .centered</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="one-half centered">
+                        <p>½ .centered</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="two-thirds centered">
+                        <p>⅔ .centered</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-10 centered">
+                        <p>.col-10 .centered</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-8 centered">
+                        <p>.col-8 .centered</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 centered">
+                        <p>.col-6 .centered</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-4 centered">
+                        <p>.col-4 .centered</p>
+                    </div>
+                </div>
+
+
+                <h4>Push/Offset Columns</h4>
+
+                <div class="row">
+                    <div class="col-6 push-6">
+                        <p>.col-6 .push-6</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 offset-3">
+                        <p>.col-6 .offset-3</p>
+                    </div>
+                </div>
+
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="three-fourths">
+                    <div class="footer-about">
+                        <h2><a href="index.html">Simple Base</a></h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis dolor at nibh
+                            laoreet interdum et a leo.</p>
+                    </div>
+                </div>
+                <div class="one-fourth">
+                    <nav class="footer-nav">
+                        <h4 class="hide-visually-but-keep-space">Pages</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="styleguide.html">Style Guide</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+    </footer>
+
+    <!-- MAIN JS FILE -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

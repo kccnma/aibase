@@ -1,0 +1,31 @@
+/* ANIMATIONS */
+
+/* PAGE LOAD FADE-IN ANIMATION */
+/* @keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+main {
+    animation-name: fade-in;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-duration: .5s;
+} */
+
+/* TRANSITIONS FOR INTERACTIVE ELEMENTS */
+/* a,
+.button {
+    transition: color .2s ease-out, background-color .2s ease-out, border-color .2s ease-out;
+} */
+
+/* ENABLE NATIVE VIEW TRANSITIONS (EXPERIMENTAL) */
+/* @view-transition {
+    navigation: auto;
+} */
