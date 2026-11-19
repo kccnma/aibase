@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Base | Design Principles &amp; Roadmap</title>
+    <meta name="description"
+        content="Design principles, development agreements, and a proposed feature roadmap for AI Base.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="site-logo">
+            <h1><a href="index.html">AI Base</a></h1>
+        </div>
+        <button class="site-nav-toggle" type="button" aria-controls="primary-navigation"
+            aria-expanded="false" hidden>
+            <span class="site-nav-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+            <span>Menu</span>
+        </button>
+        <nav class="site-nav" id="primary-navigation" aria-label="Primary">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="docs.html">Docs</a></li>
+                <li><a href="styleguide.html">Style Guide</a></li>
+                <li><a href="roadmap.html" aria-current="page">Roadmap</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Design Principles &amp; Roadmap</h1>
+                <p>A proposed, incremental direction for evolving this static front-end starter.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2>Principles</h2>
+                <ul>
+                    <li><strong>Keep the base lightweight.</strong> Pages remain static HTML, CSS, and JavaScript, with no required build step or runtime dependencies.</li>
+                    <li><strong>Start with the platform.</strong> Prefer semantic HTML, native browser features, and CSS over custom JavaScript behavior.</li>
+                    <li><strong>Make accessibility and responsiveness part of the feature.</strong> Keyboard access, useful semantics, visible focus, and small-screen behavior are requirements, not later polish.</li>
+                    <li><strong>Build small vertical slices.</strong> Each change should deliver a usable behavior or pattern that can be reviewed and verified independently.</li>
+                    <li><strong>Use TDD.</strong> Define expected behavior and add a focused failing check before implementation; then implement the smallest change and rerun the check.</li>
+                    <li><strong>Document what ships.</strong> Update the docs and style-guide example with each feature so the starter stays understandable and usable.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2>Proposed roadmap</h2>
+                <ol>
+                    <li>
+                        <h3>Foundations and agreements</h3>
+                        <p>Agree on these principles and document how contributors should work. This roadmap and <code>AGENTS.md</code> establish the initial proposal; they do not represent completed feature work.</p>
+                    </li>
+                    <li>
+                        <h3>Optional browser checks and mobile navigation</h3>
+                        <p>The first tracer bullet uses an optional Playwright browser-testing workflow, kept in development tooling and out of the site's published runtime, to verify the responsive, accessible site navigation across viewports and keyboard interaction.</p>
+                    </li>
+                    <li>
+                        <h3>Complementary CSS layout patterns</h3>
+                        <p>Add documented, responsive stack, cluster, split, and sidebar patterns where they solve layout needs not already covered by the existing grid. Keep each pattern focused and avoid creating a competing grid system.</p>
+                    </li>
+                    <li>
+                        <h3>Essential content and form components</h3>
+                        <p>Add accessible form controls and their states, cards, callouts, and native disclosures using semantic HTML where suitable. Include focused checks and practical examples in the docs and style guide for each component.</p>
+                    </li>
+                    <li>
+                        <h3>Defer heavier JavaScript interactions</h3>
+                        <p>Do not add tabs, carousels, or custom dropdowns just to expand the starter. Revisit them only when a concrete use case justifies the behavior, accessibility requirements, testing cost, and documentation.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2>Working agreement for each feature</h2>
+                <ol>
+                    <li>Describe the user-facing behavior and accessibility expectations.</li>
+                    <li>Add a focused failing test or check for that behavior before changing implementation.</li>
+                    <li>Implement the smallest complete vertical slice using existing conventions.</li>
+                    <li>Run the relevant checks, then update the docs and style-guide example alongside the feature.</li>
+                    <li>Review the code and documentation together; record any unresolved decision as a proposal.</li>
+                </ol>
+                <p>The optional test runner is Playwright. Follow the setup and commands in the
+                    <a href="docs.html#sitenavigation">navigation documentation</a>; these checks are not a
+                    prerequisite for using the starter.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="three-fourths">
+                    <div class="footer-about">
+                        <h2><a href="index.html">AI Base</a></h2>
+                        <p>AI Base is a basic set of starter HTML, CSS, and Javascript created by a human, assisted by
+                            AI, and built for front-end developers and UX/UI designers that want to embrace AI to build
+                            custom static websites that are fast and accessible.</p>
+                    </div>
+                </div>
+                <div class="one-fourth">
+                    <nav class="footer-nav">
+                        <h4 class="hide-visually-but-keep-space">Pages</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="docs.html">Docs</a></li>
+                            <li><a href="styleguide.html">Style Guide</a></li>
+                            <li><a href="roadmap.html">Roadmap</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
