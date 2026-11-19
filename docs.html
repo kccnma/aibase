@@ -19,11 +19,17 @@
         <div class="site-logo">
             <h1><a href="index.html">AI Base</a></h1>
         </div>
-        <nav class="site-nav">
+        <button class="site-nav-toggle" type="button" aria-controls="primary-navigation"
+            aria-expanded="false" hidden>
+            <span class="site-nav-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+            <span>Menu</span>
+        </button>
+        <nav class="site-nav" id="primary-navigation" aria-label="Primary">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="docs.html" aria-current="page">Docs</a></li>
                 <li><a href="styleguide.html">Style Guide</a></li>
+                <li><a href="roadmap.html">Roadmap</a></li>
             </ul>
         </nav>
     </header>
@@ -37,7 +43,7 @@
         </section>
 
 
-        <div class="page-layout-twocolumns">
+        <div class="container with-sidebar">
 
             <aside class="sidebar">
                 <nav>
@@ -53,12 +59,18 @@
                         <li><a href="#container">Container</a></li>
                         <li><a href="#mediaqueries">Media Queries</a></li>
                         <li><a href="#grid">Grid System</a></li>
+                        <li><a href="#stack">Stack Layout</a></li>
+                        <li><a href="#cluster">Cluster Layout</a></li>
+                        <li><a href="#split">Split Layout</a></li>
+                        <li><a href="#sidebar">Sidebar Layout</a></li>
                         <li><a href="#helpers">Helpers</a></li>
                         <li><a href="#animations">Animations</a></li>
+                        <li><a href="#sitenavigation">Responsive Site Navigation</a></li>
                     </ul>
                 </nav>
             </aside>
 
+            <div class="with-sidebar-content">
             <section>
                 <div class="container">
                     <h2 id="gettingstarted">Getting Started</h2>
@@ -67,6 +79,8 @@
                         framework line by line.</p>
                     <p>No prior web design experience is required. There is no pre-processing, no command line, and
                         no special software. All you need is a text editor and a browser.</p>
+                    <p>See the <a href="roadmap.html">design principles and proposed feature roadmap</a> for project
+                        direction and contribution agreements.</p>
                 </div>
             </section>
 
@@ -91,6 +105,7 @@ sitename/
 │       ├── global-helpers.css
 │       ├── containers.css
 │       ├── grid.css
+│       ├── layout-patterns.css
 │       ├── structure.css
 │       ├── ui-buttons.css
 │       └── animations.css
@@ -121,6 +136,7 @@ sitename/
 /* ---------- PAGE LAYOUT ---------- */
 @import url('partials/containers.css');
 @import url('partials/grid.css');
+@import url('partials/layout-patterns.css');
 
 /* ---------- PAGE STRUCTURE ---------- */
 @import url('partials/structure.css');
@@ -542,6 +558,113 @@ sitename/
 
             <section>
                 <div class="container">
+                    <h2 id="stack">Stack Layout</h2>
+                    <p>Use <code>.stack</code> to arrange related content vertically with consistent spacing,
+                        independently of the grid. It applies the standard small spacer between direct children and
+                        removes their block margins so the gap stays predictable.</p>
+                    <h3>Example</h3>
+                    <div class="stack">
+                        <p>First content item</p>
+                        <p>Second content item</p>
+                        <p>Third content item</p>
+                    </div>
+                    <h3>Markup</h3>
+                    <pre><code>
+&lt;div class="stack"&gt;
+    &lt;p&gt;First content item&lt;/p&gt;
+    &lt;p&gt;Second content item&lt;/p&gt;
+    &lt;p&gt;Third content item&lt;/p&gt;
+&lt;/div&gt;
+                    </code></pre>
+                    <p>The pattern is defined in <code>css/partials/layout-patterns.css</code>.</p>
+                </div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <h2 id="cluster">Cluster Layout</h2>
+                    <p>Use <code>.cluster</code> to arrange related items in a row that wraps when space is limited.
+                        The standard small spacer is used both between items and between rows. Applied to a list, it
+                        also removes the default markers, padding, and margin.</p>
+                    <h3>Example</h3>
+                    <ul class="cluster">
+                        <li>Responsive Navigation</li>
+                        <li>Grid Patterns</li>
+                        <li>CSS Components</li>
+                        <li>Documentation</li>
+                    </ul>
+                    <h3>Markup</h3>
+                    <pre><code>
+&lt;ul class="cluster"&gt;
+    &lt;li&gt;Responsive Navigation&lt;/li&gt;
+    &lt;li&gt;Grid Patterns&lt;/li&gt;
+    &lt;li&gt;CSS Components&lt;/li&gt;
+    &lt;li&gt;Documentation&lt;/li&gt;
+&lt;/ul&gt;
+                    </code></pre>
+                    <p>The pattern is defined in <code>css/partials/layout-patterns.css</code>.</p>
+                </div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <h2 id="split">Split Layout</h2>
+                    <p>Use <code>.split</code> for two content areas that share a row when there is room and wrap
+                        into separate rows when there is not. Each item starts with a 20rem basis and grows to share
+                        available space.</p>
+                    <h3>Example</h3>
+                    <div class="split">
+                        <div>
+                            <h4>Primary content</h4>
+                            <p>This area shares available space with its sibling.</p>
+                        </div>
+                        <div>
+                            <h4>Supporting content</h4>
+                            <p>At narrow widths, this content wraps below the first area.</p>
+                        </div>
+                    </div>
+                    <h3>Markup</h3>
+                    <pre><code>
+&lt;div class="split"&gt;
+    &lt;div&gt;Primary content&lt;/div&gt;
+    &lt;div&gt;Supporting content&lt;/div&gt;
+&lt;/div&gt;
+                    </code></pre>
+                    <p>The pattern is defined in <code>css/partials/layout-patterns.css</code>.</p>
+                </div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <h2 id="sidebar">Sidebar Layout</h2>
+                    <p>Use <code>.with-sidebar</code> on a container with two children: the sidebar first and the
+                        main content second. The sidebar has a 14rem basis, while the content expands to use the
+                        remaining space. They wrap into separate rows when the content cannot maintain half the
+                        container width. In the Docs page, the sidebar also stays sticky on wider screens.</p>
+                    <h3>Example</h3>
+                    <div class="with-sidebar">
+                        <aside>
+                            <h4>Sidebar</h4>
+                            <p>Secondary information</p>
+                        </aside>
+                        <div>
+                            <h4>Main content</h4>
+                            <p>The primary content area grows to fill the available space.</p>
+                        </div>
+                    </div>
+                    <h3>Markup</h3>
+                    <pre><code>
+&lt;div class="with-sidebar"&gt;
+    &lt;aside&gt;Sidebar content&lt;/aside&gt;
+    &lt;div&gt;Main content&lt;/div&gt;
+&lt;/div&gt;
+                    </code></pre>
+                    <p>The pattern is defined in <code>css/partials/layout-patterns.css</code>.</p>
+                </div>
+            </section>
+
+            <section>
+                <div class="container">
                     <h2 id="helpers">Helpers</h2>
 
                     <h3>hide-visually</h3>
@@ -591,6 +714,47 @@ a,
                 </div>
             </section>
 
+            <section>
+                <div class="container">
+                    <h2 id="sitenavigation">Responsive Site Navigation</h2>
+                    <p>The shared site header keeps its links visible on desktop. On screens narrower than 768px, a
+                        Menu button reveals the links. Its <code>aria-expanded</code> state communicates whether the
+                        menu is open; pressing Escape closes it and returns focus to the button. The links remain
+                        available when JavaScript is disabled.</p>
+                    <h3>Markup pattern</h3>
+                    <p>Keep the navigation visible in the initial HTML and the toggle hidden until JavaScript is
+                        available. The value of <code>aria-controls</code> must match the navigation's
+                        <code>id</code>:</p>
+                    <pre><code>
+&lt;button class="site-nav-toggle" type="button"
+        aria-controls="primary-navigation" aria-expanded="false" hidden&gt;
+    Menu
+&lt;/button&gt;
+&lt;nav class="site-nav" id="primary-navigation" aria-label="Primary"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="docs.html"&gt;Docs&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="styleguide.html"&gt;Style Guide&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="roadmap.html"&gt;Roadmap&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+                    </code></pre>
+                    <p>The shared header uses a 768px breakpoint. Keep the button and navigation IDs consistent on
+                        each page that uses this header.</p>
+                    <h3>Optional Playwright checks</h3>
+                    <p>Browser checks are development-only and are not needed to use or publish this static site.
+                        Install Node.js, npm, and Python 3 to run the optional suite:</p>
+                    <pre><code>
+npm install
+npx playwright install chromium
+npm run test:e2e
+                    </code></pre>
+                    <p>Playwright is a development dependency. Python's built-in HTTP server serves the site during
+                        tests; no build step or runtime dependency is added.</p>
+                </div>
+            </section>
+
+            </div>
         </div>
 
     </main>
@@ -614,6 +778,7 @@ a,
                             <li><a href="index.html">Home</a></li>
                             <li><a href="docs.html">Docs</a></li>
                             <li><a href="styleguide.html">Style Guide</a></li>
+                            <li><a href="roadmap.html">Roadmap</a></li>
                         </ul>
                     </nav>
                 </div>

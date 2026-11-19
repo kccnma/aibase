@@ -1,0 +1,60 @@
+/* LAYOUT PATTERNS */
+
+.stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacer-small);
+}
+
+.cluster {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--spacer-small);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.split,
+.with-sidebar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacer-small);
+}
+
+.split > * {
+    flex: 1 1 20rem;
+    min-width: 0;
+}
+
+.with-sidebar {
+    align-items: flex-start;
+}
+
+.with-sidebar > :first-child {
+    flex: 1 1 14rem;
+}
+
+.with-sidebar > :last-child {
+    flex: 999 1 0;
+    min-width: 50%;
+}
+
+.with-sidebar > .sidebar {
+    padding-block-start: var(--spacer-large);
+}
+
+@media (min-width: 768px) {
+    .with-sidebar > .sidebar {
+        position: sticky;
+        top: 0;
+    }
+}
+
+.stack > *,
+.cluster > *,
+.split > *,
+.with-sidebar > * {
+    margin-block: 0;
+}

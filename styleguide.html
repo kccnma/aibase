@@ -19,11 +19,17 @@
         <div class="site-logo">
             <h1><a href="index.html">AI Base</a></h1>
         </div>
-        <nav class="site-nav">
+        <button class="site-nav-toggle" type="button" aria-controls="primary-navigation"
+            aria-expanded="false" hidden>
+            <span class="site-nav-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+            <span>Menu</span>
+        </button>
+        <nav class="site-nav" id="primary-navigation" aria-label="Primary">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="docs.html">Docs</a></li>
                 <li><a href="styleguide.html" aria-current="page">Style Guide</a></li>
+                <li><a href="roadmap.html">Roadmap</a></li>
             </ul>
         </nav>
     </header>
@@ -35,6 +41,16 @@
                 <div class="runninghead">For Client Projects</div>
                 <h1 class="headline">Style Guide</h1>
                 <p>See below for examples and features.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2>Responsive Site Navigation</h2>
+                <p>The shared header above demonstrates the responsive site navigation: the Menu button appears on
+                    small screens, announces its expanded state, and reveals the primary links. See the
+                    <a href="docs.html#sitenavigation">navigation documentation and optional browser checks</a>.
+                </p>
             </div>
         </section>
 
@@ -153,6 +169,81 @@
             </div>
         </section>
 
+        <section id="layout-patterns">
+            <div class="container">
+                <h2>Layout Patterns</h2>
+                <h3>Stack</h3>
+                <p>The <code>.stack</code> utility creates a vertical flow with consistent spacing between items.</p>
+                <div class="stack" id="stack-example">
+                    <p>First content item</p>
+                    <p>Second content item</p>
+                    <p>Third content item</p>
+                </div>
+                <pre><code>
+&lt;div class="stack"&gt;
+    &lt;p&gt;First content item&lt;/p&gt;
+    &lt;p&gt;Second content item&lt;/p&gt;
+    &lt;p&gt;Third content item&lt;/p&gt;
+&lt;/div&gt;
+                </code></pre>
+                <h3>Cluster</h3>
+                <p>The <code>.cluster</code> utility arranges related items in a row and wraps them when space is
+                    limited.</p>
+                <ul class="cluster" id="cluster-example">
+                    <li>Responsive Navigation</li>
+                    <li>Grid Patterns</li>
+                    <li>CSS Components</li>
+                    <li>Documentation</li>
+                </ul>
+                <pre><code>
+&lt;ul class="cluster"&gt;
+    &lt;li&gt;Responsive Navigation&lt;/li&gt;
+    &lt;li&gt;Grid Patterns&lt;/li&gt;
+    &lt;li&gt;CSS Components&lt;/li&gt;
+    &lt;li&gt;Documentation&lt;/li&gt;
+&lt;/ul&gt;
+                </code></pre>
+                <h3>Split</h3>
+                <p>The <code>.split</code> utility shares available horizontal space, then wraps its items when the
+                    container is narrow.</p>
+                <div class="split" id="split-example">
+                    <div>
+                        <h4>Primary content</h4>
+                        <p>This area shares available space with its sibling.</p>
+                    </div>
+                    <div>
+                        <h4>Supporting content</h4>
+                        <p>At narrow widths, this content wraps below the first area.</p>
+                    </div>
+                </div>
+                <pre><code>
+&lt;div class="split"&gt;
+    &lt;div&gt;Primary content&lt;/div&gt;
+    &lt;div&gt;Supporting content&lt;/div&gt;
+&lt;/div&gt;
+                </code></pre>
+                <h3>Sidebar</h3>
+                <p>The <code>.with-sidebar</code> utility keeps a sidebar beside a flexible content area when space
+                    allows and stacks them on narrow screens.</p>
+                <div class="with-sidebar" id="sidebar-example">
+                    <aside>
+                        <h4>Sidebar</h4>
+                        <p>Secondary information</p>
+                    </aside>
+                    <div>
+                        <h4>Main content</h4>
+                        <p>The primary content area grows to fill the available space.</p>
+                    </div>
+                </div>
+                <pre><code>
+&lt;div class="with-sidebar"&gt;
+    &lt;aside&gt;Sidebar content&lt;/aside&gt;
+    &lt;div&gt;Main content&lt;/div&gt;
+&lt;/div&gt;
+                </code></pre>
+            </div>
+        </section>
+
         <section>
             <div class="container">
                 <h2>Custom Type Block</h2>
@@ -232,6 +323,7 @@
                             <li><a href="index.html">Home</a></li>
                             <li><a href="docs.html">Docs</a></li>
                             <li><a href="styleguide.html">Style Guide</a></li>
+                            <li><a href="roadmap.html">Roadmap</a></li>
                         </ul>
                     </nav>
                 </div>
